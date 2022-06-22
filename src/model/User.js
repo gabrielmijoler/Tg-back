@@ -52,9 +52,19 @@ const User = sequilize.define ('cliente',{
     updatedAt: {
         type: Sequelize.DATE,
         allowNull:true
-    }  
+    },
+    idFormulario: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {         // User belongsTo Company 1:1
+          model: 'formularios',
+          key: 'id'
+        }
+      },
 })
-
-// User.sync()
+    User.associate = function(models) {
+        User.belongsTo(Formulario, {foreignKey: 'idFormulario', as: 'formularios'})
+    };
+User.sync()
 
 module.exports = User

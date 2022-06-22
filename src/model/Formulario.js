@@ -1,12 +1,13 @@
 const Sequelize = require('sequelize')
-const db = require("../config/database")
+const db = require("../config/database");
+const Cid = require('./Cid');
 
 const Formulario = db.define ('formulario',{
     id:{
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
-        allowNull:false
+        allowNull:true
     },
     lingua: {
         type: Sequelize.TINYINT(1),
@@ -21,173 +22,575 @@ const Formulario = db.define ('formulario',{
     },
     cor_pele: {
         type: Sequelize.TINYINT(1),
-        allowNull:true
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Cor da Pele null")
+                }
+            }
+        }
     },
-    Nariz: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Orelhas: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Labios_input: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Pele: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Fala:{
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Respiracao: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Tranpiracao: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Sono:{
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Emocoes: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Cor: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Estacao: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Alimentacao: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Sabores: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Sede: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Disfuncoes_gastrointestinais: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Excrecoes: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Casa_sangrar: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Obs_casasan: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Menstruacao: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Olho_visao: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Ouvidos_audicao: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Nariz_olfato: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Tato: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Boca_gosto: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Coluna: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Dores_musculares: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Dores_articulares: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Abdome: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Dores_cabeca: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Torax: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Escala_analogdor: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Diagnostico_teurapeutico: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Condutas: {
-        type: Sequelize.TINYINT(1),
-        allowNull:true
-    },
-    Obs_casa: {
+    nariz: {
         type: Sequelize.STRING,
-        allowNull:true
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Nariz null")
+                }
+            }
+        }
     },
-    Obs_mentruacao: {
+    orelhas: {
         type: Sequelize.STRING,
-        allowNull:true
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Orelhas null")
+                }
+            }
+        }
     },
-    Obs_bocagosot: {
+    labios_input: {
         type: Sequelize.STRING,
-        allowNull:true
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Labios text null")
+                }
+            }
+        }
     },
-    Obs_abdome: {
+    pele: {
         type: Sequelize.STRING,
-        allowNull:true
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Pele null")
+                }
+            }
+        }
     },
-    Obs_torax: {
-        type: Sequelize.STRING,
-        allowNull:true
+    fala:{
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Fala null")
+                }
+            }
+        }
     },
-    Objetivo: { 
+    respiracao: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Respiracao null")
+                }
+            }
+        }
+    },
+    tranpiracao: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Tranpiracao null")
+                }
+            }
+        }
+    },
+    sono:{
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Sono null")
+                }
+            }
+        }
+    },
+    emocoes: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Emocoes null")
+                }
+            }
+        }
+    },
+    cor: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Cor null")
+                }
+            }
+        }
+    },
+    estacao: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Estacao null")
+                }
+            }
+        }
+    },
+    alimentacao: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Alimentacao null")
+                }
+            }
+        }
+    },
+    sabores: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Sabores null")
+                }
+            }
+        }
+    },
+    sede: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Sede null")
+                }
+            }
+        }
+    },
+    disfuncoes_gastrointestinais: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Disfunções Gastro-intestinais null")
+                }
+            }
+        }
+    },
+    excrecoes: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Excreções null")
+                }
+            }
+        }
+    },
+    excrecoes2: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Excreções 2 null")
+                }
+            }
+        }
+    },
+    obs_sono: {
         type: Sequelize.STRING,
-        allowNull:true
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Obs Sono null")
+                }
+            }
+        }
+    },
+    obs_tranpiracao: {
+        type: Sequelize.STRING,
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Obs Tranpiração null")
+                }
+            }
+        }
+    },
+    menstruacao: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Menstruacao null")
+                }
+            }
+        }
+    },
+    olho_visao: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Olhos e visão null")
+                }
+            }
+        }
+    },
+    ouvidos_audicao: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Ouvidos e Audição null")
+                }
+            }
+        }
+    },
+    nariz_olfato: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Nariz e olfato null")
+                }
+            }
+        }
+    },
+    tato: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Tato null")
+                }
+            }
+        }
+    },
+    boca_gosto: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Boca e gosto null")
+                }
+            }
+        }
+    },
+    coluna: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Coluna null")
+                }
+            }
+        }
+    },
+    dores_musculares: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Dores musculares null")
+                }
+            }
+        }
+    },
+    dores_articulares: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Dores Articulares null")
+                }
+            }
+        }
+    },
+    abdome: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Abdome null")
+                }
+            }
+        }
+    },
+    dores_cabeca: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Dores de cabeça null")
+                }
+            }
+        }
+    },
+    torax: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Tórax null")
+                }
+            }
+        }
+    },
+    escala_analogdor: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Escala de dor null")
+                }
+            }
+        }
+    },
+    diagnostico_teurapeutico: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("DIAGNÓSTICO TERAPÊUTICO null")
+                }
+            }
+        }
+    },
+    condutas: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Condutas null")
+                }
+            }
+        }
+    },
+    obs_mentruacao: {
+        type: Sequelize.STRING,
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Obs Mentruação null")
+                }
+            }
+        }
+    },
+    obs_bocagosot: {
+        type: Sequelize.STRING,
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Obs Boca e gosto null")
+                }
+            }
+        }
+    },
+    obs_abdome: {
+        type: Sequelize.STRING,
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Obs_abdome null")
+                }
+            }
+        }
+    },
+    obs_torax: {
+        type: Sequelize.STRING,
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Obs_torax null")
+                }
+            }
+        }
+    },
+    objetivo: { 
+        type: Sequelize.STRING,
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Objetivo final null")
+                }
+            }
+        }
+    },
+    medicamento: { 
+        type: Sequelize.STRING,
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Medicamento null")
+                }
+            }
+        }
+    },
+    patalogia: { 
+        type: Sequelize.STRING,
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Patalogia null")
+                }
+            }
+        }
+    },
+    neuromuscular: { 
+        type: Sequelize.STRING,
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Neuromuscular null")
+                }
+            }
+        }
+    },
+    diagnostico_clinico: { 
+        type: Sequelize.STRING,
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Diagnóstico clínico null")
+                }
+            }
+        }
+    },
+    queixa_prin: { 
+        type: Sequelize.STRING,
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Neuromuscular null")
+                }
+            }
+        }
+    },
+    obs_lingua: { 
+        type: Sequelize.STRING,
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("obs_lingua null")
+                }
+            }
+        }
+    },
+    cabeecabelos_input: { 
+        type: Sequelize.STRING,
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Cabeça e Cabelos null")
+                }
+            }
+        }
+    },
+    obs_fala: { 
+        type: Sequelize.STRING,
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("obs_fala null")
+                }
+            }
+        }
+    },
+    obs_emocoes: {
+        type: Sequelize.STRING,
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Obs_emocoes null")
+                }
+            }
+        }
     },
     createdAt: {
         type: Sequelize.DATE,
-        allowNull:true
+        allowNull:true,
     },
     updatedAt: {
         type: Sequelize.DATE,
-        allowNull:true
-    }  
+        allowNull:true,
+    },
+    idCid: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {         // User belongsTo Company 1:1
+          model: 'cids',
+          key: 'id'
+        }
+      },
+    geralformpostura: {
+        type: Sequelize.TINYINT(1),
+        allowNull:true,
+        validade:{
+            customValidator(value){
+                if(value == null){
+                    throw new Error("Lingua null")
+                }
+            }
+        }
+    },
 })
-// Formulario.sync();
+    Formulario.associate = function(models) {
+        Formulario.belongsTo(Cid, {foreignKey: 'idCid', as: 'cids'})
+    };
+    
+Formulario.sync();
 
 module.exports = Formulario
