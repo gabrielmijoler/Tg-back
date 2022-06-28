@@ -1,93 +1,58 @@
 # Node.js
 The Node.js project uses an [open governance model](./GOVERNANCE.md).
-# Sequelize
-
-<!-- [![Greenkeeper badge](https://badges.greenkeeper.io/sequelize/sequelize-auto.svg)](https://greenkeeper.io/) -->
-
-[![Build Status](http://img.shields.io/travis/sequelize/sequelize-auto/master.svg)](https://travis-ci.org/sequelize/sequelize-auto) [![Build status](https://ci.appveyor.com/api/projects/status/bf9lb89rmpj6iveb?svg=true)](https://ci.appveyor.com/project/durango/sequelize-auto) [![Code Climate](https://codeclimate.com/github/sequelize/sequelize-auto/badges/gpa.svg)](https://codeclimate.com/github/sequelize/sequelize-auto) [![Test Coverage](https://codeclimate.com/github/sequelize/sequelize-auto/badges/coverage.svg)](https://codeclimate.com/github/sequelize/sequelize-auto/coverage)
-
-Automatically generate models for [SequelizeJS](https://github.com/sequelize/sequelize) via the command line.
-
-## Install
-
-    npm install sequelize-auto
-
-## Prerequisites
-
-You will need to install `sequelize`; it's no longer installed by `sequelize-auto`.
-
-You will need to install the correct dialect binding before using sequelize-auto.
-
-Dialect | Install
----|---
-MySQL/MariaDB | `npm install sequelize mysql2`
-Postgres | `npm install sequelize pg pg-hstore`
-Sqlite | `npm install sequelize sqlite3`
-MSSQL | `npm install sequelize tedious`
-
-
-## Usage
-
-    sequelize-auto -h <host> -d <database> -u <user> -x [password] -p [port]  --dialect [dialect] -c [/path/to/config] -o [/path/to/models] -t [tableName]
-```
-Options:
-    --help               Show help                                   [boolean]
-    --version            Show version number                         [boolean]
--h, --host               IP/Hostname for the database.                [string]
--d, --database           Database name.                               [string]
--u, --user               Username for database.                       [string]
--x, --pass               Password for database. If specified without providing
-                          a password, it will be requested interactively from
-                          the terminal.
--p, --port               Port number for database (not for sqlite). Ex:
-                          MySQL/MariaDB: 3306, Postgres: 5432, MSSQL: 1433
-                                                                      [number]
--c, --config             Path to JSON file for Sequelize-Auto options and
-                          Sequelize's constructor "options" flag object as
-                          defined here:
-                          https://sequelize.org/master/class/lib/sequelize.js~Sequelize.html#instance-constructor-constructor
-                                                                      [string]
--o, --output             What directory to place the models.          [string]
--e, --dialect            The dialect/engine that you're using: postgres,
-                          mysql, sqlite, mssql                         [string]
--a, --additional         Path to JSON file containing model options (for all
-                          tables). See the options: https://sequelize.org/master/class/lib/model.js~Model.html#static-method-init
-                                                                      [string]
-    --indentation        Number of spaces to indent                   [number]
--t, --tables             Space-separated names of tables to import     [array]
--T, --skipTables         Space-separated names of tables to skip       [array]
---caseModel, --cm        Set case of model names: c|l|o|p|u
-                          c = camelCase
-                          l = lower_case
-                          o = original (default)
-                          p = PascalCase
-                          u = UPPER_CASE
---caseProp, --cp         Set case of property names: c|l|o|p|u
---caseFile, --cf         Set case of file names: c|l|o|p|u|k
-                          k = kebab-case
---noAlias                Avoid creating alias `as` property in relations
-                                                                     [boolean]
---noInitModels           Prevent writing the init-models file        [boolean]
--n, --noWrite            Prevent writing the models to disk          [boolean]
--s, --schema             Database schema from which to retrieve tables[string]
--v, --views              Include database views in generated models  [boolean]
--l, --lang               Language for Model output: es5|es6|esm|ts
-                          es5 = ES5 CJS modules (default)
-                          es6 = ES6 CJS modules
-                          esm = ES6 ESM modules
-                          ts = TypeScript                             [string]
---useDefine              Use `sequelize.define` instead of `init` for es6|esm|ts
---singularize, --sg      Singularize model and file names from plural table
-                          names                                      [boolean]
-```
-
-> On Windows, provide the path to sequelize-auto: `node_modules\.bin\sequelize-auto [args]`
-
 
 ### Download
 
 Binaries, installers, and source tarballs are available at
 <https://nodejs.org/en/download/>.
+
+<p style="text-align: center;">
+  <img src="logo.svg" width="100" alt="Sequelize logo" />
+  <h1 align="center"><a href="https://sequelize.org">Sequelize</a></h1>
+</p>
+
+[![npm version](https://badgen.net/npm/v/@sequelize/core)](https://www.npmjs.com/package/@sequelize/core)
+[![Build Status](https://github.com/sequelize/sequelize/workflows/CI/badge.svg)](https://github.com/sequelize/sequelize/actions?query=workflow%3ACI)
+[![npm downloads](https://badgen.net/npm/dm/@sequelize/core)](https://www.npmjs.com/package/@sequelize/core)
+[![contributors](https://img.shields.io/github/contributors/sequelize/sequelize)](https://github.com/sequelize/sequelize/graphs/contributors)
+[![Open Collective](https://img.shields.io/opencollective/backers/sequelize)](https://opencollective.com/sequelize#section-contributors)
+[![sponsor](https://img.shields.io/opencollective/all/sequelize?label=sponsors)](https://opencollective.com/sequelize)
+[![Merged PRs](https://badgen.net/github/merged-prs/sequelize/sequelize)](https://github.com/sequelize/sequelize)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Sequelize is an easy-to-use and promise-based [Node.js](https://nodejs.org/en/about/) [ORM tool](https://en.wikipedia.org/wiki/Object-relational_mapping) for [Postgres](https://en.wikipedia.org/wiki/PostgreSQL), [MySQL](https://en.wikipedia.org/wiki/MySQL), [MariaDB](https://en.wikipedia.org/wiki/MariaDB), [SQLite](https://en.wikipedia.org/wiki/SQLite), [DB2](https://en.wikipedia.org/wiki/IBM_Db2_Family), [Microsoft SQL Server](https://en.wikipedia.org/wiki/Microsoft_SQL_Server), [Snowflake](https://www.snowflake.com/), and [IBM i](https://www.ibm.com/support/pages/db2-ibm-i). It features solid transaction support, relations, eager and lazy loading, read replication and more.
+
+Would you like to contribute? Read [our contribution guidelines](./CONTRIBUTING.md) to know more. There are many ways to help! 😃
+
+## :computer: Getting Started
+
+Ready to start using Sequelize? Head to [sequelize.org](https://sequelize.org) to begin!
+
+- [Our Getting Started guide for Sequelize 6 (stable)](https://sequelize.org/docs/v6/getting-started)
+- [Our Getting Started guide for Sequelize 7 (alpha)](https://sequelize.org/docs/v7/getting-started)
+
+## :money_with_wings: Supporting the project
+
+Do you like Sequelize and would like to give back to the engineering team behind it?
+
+We have recently created an [OpenCollective based money pool](https://opencollective.com/sequelize) which is shared amongst all core maintainers based on their contributions. Every support is wholeheartedly welcome. ❤️
+
+## :pencil: Major version changelog
+
+Please find upgrade information to major versions here:
+
+- [Upgrade from v5 to v6](https://sequelize.org/docs/v6/other-topics/upgrade-to-v6)
+- [Upgrade from v6 to v7](https://sequelize.org/docs/v7/other-topics/upgrade-to-v7)
+
+## :book: Resources
+
+- [Documentation](https://sequelize.org)
+- [Databases Compatibility Table](https://sequelize.org/releases/)
+- [Changelog](https://github.com/sequelize/sequelize/releases)
+- [Discussions](https://github.com/sequelize/sequelize/discussions)
+- [Slack Inviter](http://sequelize-slack.herokuapp.com/)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/sequelize.js)
 
 ## Available Scripts
 ### `npm run dev`
