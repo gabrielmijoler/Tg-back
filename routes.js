@@ -22,6 +22,7 @@ var MenstruacaoController = require("./src/controller/controllerMenstruacao")
 var NarizOlfatoController = require("./src/controller/controllerNarizOlfato")
 var OlhosVisaoController = require("./src/controller/controllerOlhosVisao")
 var OuvidosAudicaoController = require("./src/controller/controllerOuvidosAudicao")
+var PalpacaoController = require("./src/controller/controllerPalpacao")
 var RespiracaoController = require("./src/controller/controllerRespiracao")
 var SaboresController = require("./src/controller/controllerSabores")
 var SedeController = require("./src/controller/controllerSede")
@@ -50,6 +51,7 @@ routes.get("/geral",GeralController.get);
 
 routes.post("/abdome",AbdomeController.post);
 routes.get("/abdome",AbdomeController.get);
+
 
 routes.post("/alimentacao",AlimentacaoController.post);
 routes.get("/alimentacao",AlimentacaoController.get);
@@ -104,6 +106,9 @@ routes.get("/olhovisao",OlhosVisaoController.get);
 
 routes.post("/ouvidosaudicao",OuvidosAudicaoController.post);
 routes.get("/ouvidosaudicao",OuvidosAudicaoController.get);
+
+routes.post("/palpacao",PalpacaoController.post);
+routes.get("/palpacao",PalpacaoController.get);
 
 routes.post("/respiracao",RespiracaoController.post);
 routes.get("/respiracao",RespiracaoController.get);

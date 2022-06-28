@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require("../config/database");
 const Cid = require('./Cid');
+const Palpacao = require('./Palpacao');
 
 const Formulario = db.define ('formulario',{
     id:{
@@ -39,6 +40,9 @@ const Formulario = db.define ('formulario',{
                 if(value == null){
                     throw new Error("Nariz null")
                 }
+            },
+            notEmpty: {
+                msg: "Esse campo não pode ser vazio"
             }
         }
     },
@@ -50,6 +54,9 @@ const Formulario = db.define ('formulario',{
                 if(value == null){
                     throw new Error("Orelhas null")
                 }
+            },
+            notEmpty: {
+                msg: "Esse campo não pode ser vazio"
             }
         }
     },
@@ -61,6 +68,9 @@ const Formulario = db.define ('formulario',{
                 if(value == null){
                     throw new Error("Labios text null")
                 }
+            },
+            notEmpty: {
+                msg: "Esse campo não pode ser vazio"
             }
         }
     },
@@ -72,6 +82,9 @@ const Formulario = db.define ('formulario',{
                 if(value == null){
                     throw new Error("Pele null")
                 }
+            },
+            notEmpty: {
+                msg: "Esse campo não pode ser vazio"
             }
         }
     },
@@ -402,7 +415,7 @@ const Formulario = db.define ('formulario',{
                 if(value == null){
                     throw new Error("Condutas null")
                 }
-            }
+            },
         }
     },
     obs_mentruacao: {
@@ -457,6 +470,9 @@ const Formulario = db.define ('formulario',{
                 if(value == null){
                     throw new Error("Objetivo final null")
                 }
+            },
+            notEmpty: {
+                msg: "Esse campo não pode ser vazio"
             }
         }
     },
@@ -468,6 +484,9 @@ const Formulario = db.define ('formulario',{
                 if(value == null){
                     throw new Error("Medicamento null")
                 }
+            },
+            notEmpty: {
+                msg: "Esse campo não pode ser vazio"
             }
         }
     },
@@ -479,6 +498,9 @@ const Formulario = db.define ('formulario',{
                 if(value == null){
                     throw new Error("Patalogia null")
                 }
+            },
+            notEmpty: {
+                msg: "Esse campo não pode ser vazio"
             }
         }
     },
@@ -490,6 +512,9 @@ const Formulario = db.define ('formulario',{
                 if(value == null){
                     throw new Error("Neuromuscular null")
                 }
+            },
+            notEmpty: {
+                msg: "Esse campo não pode ser vazio"
             }
         }
     },
@@ -501,6 +526,9 @@ const Formulario = db.define ('formulario',{
                 if(value == null){
                     throw new Error("Diagnóstico clínico null")
                 }
+            },
+            notEmpty: {
+                msg: "Esse campo não pode ser vazio"
             }
         }
     },
@@ -512,6 +540,9 @@ const Formulario = db.define ('formulario',{
                 if(value == null){
                     throw new Error("Neuromuscular null")
                 }
+            },
+            notEmpty: {
+                msg: "Esse campo não pode ser vazio"
             }
         }
     },
@@ -534,6 +565,9 @@ const Formulario = db.define ('formulario',{
                 if(value == null){
                     throw new Error("Cabeça e Cabelos null")
                 }
+            },
+            notEmpty: {
+                msg: "Esse campo não pode ser vazio"
             }
         }
     },
@@ -575,6 +609,14 @@ const Formulario = db.define ('formulario',{
           key: 'id'
         }
       },
+    idPalpacao: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {         // User belongsTo Company 1:1
+          model: 'palpacaos',
+          key: 'id'
+        }
+      },
     geralformpostura: {
         type: Sequelize.TINYINT(1),
         allowNull:true,
@@ -589,6 +631,9 @@ const Formulario = db.define ('formulario',{
 })
     Formulario.associate = function(models) {
         Formulario.belongsTo(Cid, {foreignKey: 'idCid', as: 'cids'})
+    };
+    Formulario.associate = function(models) {
+        Formulario.belongsTo(Palpacao, {foreignKey: 'idPalpacao', as: 'palpacaos'})
     };
     
 Formulario.sync();
