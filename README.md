@@ -7,7 +7,6 @@ Binaries, installers, and source tarballs are available at
 <https://nodejs.org/en/download/>.
 
 <p style="text-align: center;">
-  <img src="logo.svg" width="100" alt="Sequelize logo" />
   <h1 align="center"><a href="https://sequelize.org">Sequelize</a></h1>
 </p>
 
