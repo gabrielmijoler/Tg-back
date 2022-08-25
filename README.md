@@ -1,7 +1,6 @@
-# Node.js
-The Node.js project uses an [open governance model](./GOVERNANCE.md).
-
+#Node
 ### Download
+Download [Node.js](https://nodejs.org/en/download/)
 
 Binaries, installers, and source tarballs are available at
 <https://nodejs.org/en/download/>.
