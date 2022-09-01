@@ -1,8 +1,7 @@
-#Node
-### Download
-Download [Node.js](https://nodejs.org/en/download/)
+## Download
 
-Binaries, installers, and source tarballs are available at
+[Node.js](https://nodejs.org/en/download/) Binaries, installers, and source tarballs are available at
+
 <https://nodejs.org/en/download/>.
 
 <p style="text-align: center;">
