@@ -6,10 +6,7 @@
 
 Download database [Workbench](https://dev.mysql.com/downloads/workbench/)
 
-<p style="text-align: center;">
-  <h1 align="center"><a href="https://sequelize.org">Sequelize</a></h1>
-</p>
-
+## Sequilize
 [![npm version](https://badgen.net/npm/v/@sequelize/core)](https://www.npmjs.com/package/@sequelize/core)
 [![Build Status](https://github.com/sequelize/sequelize/workflows/CI/badge.svg)](https://github.com/sequelize/sequelize/actions?query=workflow%3ACI)
 
@@ -37,7 +34,7 @@ Please find upgrade information to major versions here:
 - [Discussions](https://github.com/sequelize/sequelize/discussions)
 
 ## Available Scripts
-### `npm run dev`
+      npm run dev
 Runs the app in the development mode.
 The page will reload if you make edits.
 You will also see any lint errors in the console.
