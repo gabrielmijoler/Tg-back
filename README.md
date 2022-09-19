@@ -1,8 +1,10 @@
 ## Download
 
-[Node.js](https://nodejs.org/en/download/) Binaries, installers, and source tarballs are available at
+[Node.js](https://nodejs.org/en/download/) Binaries, installers, and source tarballs are available at <https://nodejs.org/en/download/>.
 
-<https://nodejs.org/en/download/>.
+## MySQL Workbench
+
+Download database [Workbench](https://dev.mysql.com/downloads/workbench/)
 
 <p style="text-align: center;">
   <h1 align="center"><a href="https://sequelize.org">Sequelize</a></h1>
@@ -28,12 +30,6 @@ Ready to start using Sequelize? Head to [sequelize.org](https://sequelize.org) t
 
 - [Our Getting Started guide for Sequelize 6 (stable)](https://sequelize.org/docs/v6/getting-started)
 - [Our Getting Started guide for Sequelize 7 (alpha)](https://sequelize.org/docs/v7/getting-started)
-
-## :money_with_wings: Supporting the project
-
-Do you like Sequelize and would like to give back to the engineering team behind it?
-
-We have recently created an [OpenCollective based money pool](https://opencollective.com/sequelize) which is shared amongst all core maintainers based on their contributions. Every support is wholeheartedly welcome. ❤️
 
 ## :pencil: Major version changelog
 
