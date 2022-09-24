@@ -1,11 +1,22 @@
-## Download
+## NODE
 
-[Node.js](https://nodejs.org/en/download/) Binaries, installers, and source tarballs are available at <https://nodejs.org/en/download/>.
+<div align="center">
+<img src="https://user-images.githubusercontent.com/69941946/192099996-db5eebb9-2481-495a-a202-a0393a47806b.png" width="300px"></img>
+</div>
+<br>
+
+- Installation [Node.js](https://nodejs.org/en/download/) Binaries, installers, and source tarballs are available at <https://nodejs.org/en/download/>.
+
 
 ## MySQL Workbench
 
-Download database [Workbench](https://dev.mysql.com/downloads/workbench/) <br>
-How to install the [database](https://www.youtube.com/watch?v=zpssr3u1EO8)
+<div align="center">
+<img src="https://user-images.githubusercontent.com/69941946/192100053-5abc517d-9c15-4b6b-b83c-b880bb664709.jpg" width="300px"></img>
+</div>
+<br>
+
+- Download database [Workbench](https://dev.mysql.com/downloads/workbench/) 
+- How to install the [database](https://www.youtube.com/watch?v=zpssr3u1EO8)
 
 ## Sequilize
 [![npm version](https://badgen.net/npm/v/@sequelize/core)](https://www.npmjs.com/package/@sequelize/core)
