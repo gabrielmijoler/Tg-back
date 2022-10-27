@@ -176,7 +176,7 @@ module.exports = {
         if(!req.body.Obs_emocoes.lenght > 254){
             return ("Excedeu o numero de caracteres de Observação de Emoções")
         }
-        if(!req.body.geralformpostura || typeof req.body.geralformpostura === undefined || req.body.geralformpostura === null){
+        if(!req.body.geralformpostura || typeof req.body. === undefined || req.body.geralformpostura === null){
             return("Campo Aspecto Geral do Corpo inválido")
         }
         if(!req.body.idCid || typeof req.body.idCid === undefined || req.body.idCid === null){

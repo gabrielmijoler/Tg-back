@@ -617,7 +617,7 @@ const Formulario = db.define ('formulario',{
           key: 'id'
         }
       },
-    geralformpostura: {
+      formpostura: {
         type: Sequelize.TINYINT(1),
         allowNull:true,
         validade:{
