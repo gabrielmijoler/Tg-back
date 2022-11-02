@@ -176,7 +176,7 @@ module.exports = {
         if(!req.body.Obs_emocoes.lenght > 254){
             return ("Excedeu o numero de caracteres de Observação de Emoções")
         }
-        if(!req.body.geralformpostura || typeof req.body. === undefined || req.body.geralformpostura === null){
+        if(!req.body.geralformpostura || typeof req.body.geralformpostura === undefined || req.body.geralformpostura === null){
             return("Campo Aspecto Geral do Corpo inválido")
         }
         if(!req.body.idCid || typeof req.body.idCid === undefined || req.body.idCid === null){
@@ -235,7 +235,6 @@ module.exports = {
                 Tato: req.body.Tato,
                 Boca_gosto: req.body.Boca_gosto,
                 Coluna: req.body.Coluna,
-                Dores_musculares: req.body.Dores_musculares,
                 Dores_articulares: req.body.Dores_articulares,
                 Abdome: req.body.Abdome,
                 Dores_cabeca: req.body.Dores_cabeca,
