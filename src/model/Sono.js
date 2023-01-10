@@ -23,6 +23,6 @@ const Sono = sequilize.define ('sono',{
     },
 })
 
-Sono.sync();
+// Sono.sync();
 
 module.exports = Sono;

@@ -23,6 +23,6 @@ const Menstruacao = sequilize.define ('menstruacao',{
     },
 })
 
-Menstruacao.sync();
+// Menstruacao.sync();
 
 module.exports = Menstruacao;

@@ -23,6 +23,6 @@ const Olhosvisao = sequilize.define ('olhos_visao',{
     },
 })
 
-Olhosvisao.sync();
+// Olhosvisao.sync();
 
 module.exports = Olhosvisao;

@@ -23,6 +23,6 @@ const Torax = sequilize.define ('torax',{
     },
 })
 
-Torax.sync();
+// Torax.sync();
 
 module.exports = Torax;

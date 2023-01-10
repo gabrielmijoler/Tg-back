@@ -23,6 +23,6 @@ const Disfuncoesgastro = sequilize.define ('disfuncoes_gastro',{
     },
 })
 
-Disfuncoesgastro.sync();
+// Disfuncoesgastro.sync();
 
 module.exports = Disfuncoesgastro;

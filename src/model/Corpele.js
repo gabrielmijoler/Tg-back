@@ -23,6 +23,6 @@ const Corpele = sequilize.define ('cor_pele',{
     },
 })
 
-Corpele.sync();
+// Corpele.sync();
 
 module.exports = Corpele;

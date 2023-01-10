@@ -23,6 +23,6 @@ const Bocagosto = sequilize.define ('boca_gosto',{
     },
 })
 
-Bocagosto.sync();
+// Bocagosto.sync();
 
 module.exports = Bocagosto;

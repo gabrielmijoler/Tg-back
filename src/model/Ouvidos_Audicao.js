@@ -23,6 +23,6 @@ const OuvidosAudicao = sequilize.define ('ouvidos_audicao',{
     },
 })
 
-OuvidosAudicao.sync();
+// OuvidosAudicao.sync();
 
 module.exports = OuvidosAudicao;

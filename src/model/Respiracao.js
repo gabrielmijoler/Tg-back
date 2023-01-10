@@ -23,6 +23,6 @@ const Respiracao = sequilize.define ('respiracao',{
     },
 })
 
-Respiracao.sync();
+// Respiracao.sync();
 
 module.exports = Respiracao;

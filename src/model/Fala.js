@@ -23,6 +23,6 @@ const Fala = sequilize.define ('fala',{
     },
 })
 
-Fala.sync();
+// Fala.sync();
 
 module.exports = Fala;

@@ -23,6 +23,6 @@ const Alimentacao = sequilize.define ('alimentacao',{
     },
 })
 
-Alimentacao.sync();
+// Alimentacao.sync();
 
 module.exports = Alimentacao;

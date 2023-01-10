@@ -23,6 +23,6 @@ const Cor = sequilize.define ('cor',{
     },
 })
 
-Cor.sync();
+// Cor.sync();
 
 module.exports = Cor;

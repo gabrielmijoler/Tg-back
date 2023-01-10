@@ -23,6 +23,6 @@ const Lingua = sequilize.define ('lingua',{
     },
 })
 
-Lingua.sync();
+// Lingua.sync();
 
 module.exports = Lingua;

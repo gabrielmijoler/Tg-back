@@ -23,6 +23,6 @@ const Emocoes = sequilize.define ('emocoes',{
     },
 })
 
-Emocoes.sync();
+// Emocoes.sync();
 
 module.exports = Emocoes;

@@ -23,6 +23,6 @@ const Sede = sequilize.define ('sede',{
     },
 })
 
-Sede.sync();
+// Sede.sync();
 
 module.exports = Sede;

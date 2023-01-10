@@ -39,7 +39,9 @@ routes.post("/formulario", FormularioController.post);
 routes.get("/formulario/:id", FormularioController.getByID);
 routes.put("/formulario/:id", FormularioController.put);
 
-routes.post("/user", UserController.post);
+routes.post("/cliente", UserController.post);
+routes.get("/cliente/:id", UserController.getByID);
+routes.get("/cliente", UserController.get);
 
 routes.post("/lingua",LinguaController.post);
 routes.get("/lingua/:id",LinguaController.getByID);

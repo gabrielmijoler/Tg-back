@@ -23,6 +23,6 @@ const Narizolfato = sequilize.define ('nariz_olfato',{
     },
 })
 
-Narizolfato.sync();
+// Narizolfato.sync();
 
 module.exports = Narizolfato;

@@ -23,6 +23,6 @@ const Estacao = sequilize.define ('estacao',{
     },
 })
 
-Estacao.sync();
+// Estacao.sync();
 
 module.exports = Estacao;

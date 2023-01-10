@@ -23,6 +23,6 @@ const Doresmusculares = sequilize.define ('Dores_musculares',{
     },
 })
 
-Doresmusculares.sync();
+// Doresmusculares.sync();
 
 module.exports = Doresmusculares;

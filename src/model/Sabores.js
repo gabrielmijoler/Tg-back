@@ -23,6 +23,6 @@ const Sabores = sequilize.define ('sabores',{
     },
 })
 
-Sabores.sync();
+// Sabores.sync();
 
 module.exports = Sabores;

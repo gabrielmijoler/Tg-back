@@ -25,5 +25,5 @@ const Cid = db.define('cid',{
         allowNull:true
     }  
 })
-Cid.sync();
+// Cid.sync();
 module.exports = Cid

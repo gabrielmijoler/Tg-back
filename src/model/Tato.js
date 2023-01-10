@@ -23,6 +23,6 @@ const Tato = sequilize.define ('tato',{
     },
 })
 
-Tato.sync();
+// Tato.sync();
 
 module.exports = Tato;

@@ -23,6 +23,6 @@ const Abdome = sequilize.define ('abdome',{
     },
 })
 
-Abdome.sync();
+// Abdome.sync();
 
 module.exports = Abdome;

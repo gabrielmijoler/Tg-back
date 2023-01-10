@@ -23,6 +23,6 @@ const Geral = sequilize.define ('geral',{
     },
 })
 
-Geral.sync();
+// Geral.sync();
 
 module.exports = Geral;

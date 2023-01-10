@@ -38,6 +38,6 @@ Palpacao.associate = function(models) {
     Palpacao.belongsTo(Formulario, {foreignKey: 'idFormulario', as: 'formularios'})
 };
 
-Palpacao.sync();
+// Palpacao.sync();
 
 module.exports = Palpacao;

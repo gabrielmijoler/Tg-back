@@ -1,15 +1,17 @@
-const Lingua = require("../model/User");
-const db = require("../config/database");
+
 const User = require("../model/User");
 
 module.exports = {
     async post(req, res){
         try {
             console.log(req.body)
-            const response = await Lingua.create(req.body)
-            return res.json(response)
+            const response = await User.create(req.body)
+            return res.json(response);
         } catch (error) {
+            console.log(error)
+            res.json({error: error.message})
             return error
+            //res.data: erro
         }
     },
     async getByID(req, res){
@@ -17,6 +19,15 @@ module.exports = {
             const response = await User.findByPk(req.params.id)
             console.log(response)
             console.log(req.params.id)
+            return res.json(response)
+        } catch (error) {
+            console.log(error)
+            return error
+        }
+    },
+    async get(req, res){
+        try {
+            const response = await User.findAll()
             return res.json(response)
         } catch (error) {
             console.log(error)

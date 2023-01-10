@@ -23,6 +23,6 @@ const Excrecoes2 = sequilize.define ('excrecoes2',{
     },
 })
 
-Excrecoes2.sync();
+// Excrecoes2.sync();
 
 module.exports = Excrecoes2;

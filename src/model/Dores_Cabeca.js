@@ -23,6 +23,6 @@ const Dorescabeca = sequilize.define ('Dores_cabeca',{
     },
 })
 
-Dorescabeca.sync();
+// Dorescabeca.sync();
 
 module.exports = Dorescabeca;

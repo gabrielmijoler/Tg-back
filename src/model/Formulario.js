@@ -636,6 +636,6 @@ const Formulario = db.define ('formulario',{
         Formulario.belongsTo(Palpacao, {foreignKey: 'idPalpacao', as: 'palpacaos'})
     };
     
-Formulario.sync();
+// Formulario.sync();
 
 module.exports = Formulario

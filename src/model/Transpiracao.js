@@ -23,6 +23,6 @@ const Transpiracao = sequilize.define ('transpiracao',{
     },
 })
 
-Transpiracao.sync();
+// Transpiracao.sync();
 
 module.exports = Transpiracao;

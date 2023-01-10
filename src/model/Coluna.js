@@ -23,6 +23,6 @@ const Coluna = sequilize.define ('coluna',{
     },
 })
 
-Coluna.sync();
+// Coluna.sync();
 
 module.exports = Coluna;

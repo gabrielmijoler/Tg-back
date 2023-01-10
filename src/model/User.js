@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize')
 const sequilize = require("../config/database")
+const Formulario = require("./Formulario")
 
 const phoneValidationRegex = /\d{3}-\d{3}-\d{4}/;
 
@@ -16,9 +17,6 @@ const User = sequilize.define('cliente', {
         validate: {
             notEmpty: {
                 msg: "Esse campo não pode ser vazio"
-            },
-            isUppercase: {
-                msg: "Campo tem que esta em letra maiúscula"
             },
         },
     },
@@ -125,6 +123,6 @@ const User = sequilize.define('cliente', {
 User.associate = function (models) {
     User.belongsTo(Formulario, { foreignKey: 'idFormulario', as: 'formularios' })
 };
-User.sync()
+// User.sync()
 
 module.exports = User
