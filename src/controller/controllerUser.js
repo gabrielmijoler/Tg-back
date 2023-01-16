@@ -22,6 +22,7 @@ module.exports = {
             return res.json(response)
         } catch (error) {
             console.log(error)
+            res.json({error: error.message})
             return error
         }
     },
@@ -31,6 +32,7 @@ module.exports = {
             return res.json(response)
         } catch (error) {
             console.log(error)
+            res.json({error: error.message})
             return error
         }
     },
@@ -57,6 +59,7 @@ module.exports = {
             message: "Usuário atualizado com sucesso!"})
         } catch (error) {
             console.log(error)
+            res.json({error: error.message})
             return error
         }
     },
@@ -74,6 +77,7 @@ module.exports = {
             });
         } catch (error) {
             console.log(error)
+            res.json({error: error.message})
             return error
         }
     }

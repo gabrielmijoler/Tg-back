@@ -1,7 +1,5 @@
 var express = require("express");
-var handlebars = require("express-handlebars");
 var routes = require("./routes")
-const sql = require("mysql2")
 
 // Porta do servidor
 var PORT = process.env.PORT || 3000

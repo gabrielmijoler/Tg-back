@@ -6,6 +6,8 @@ module.exports = {
             const response = await DisfuncoesGastro.create(req.body)
             return res.json(response)
         } catch (error) {
+            console.log(error)
+            res.json({error: error.message})
             return error
         }
     },
@@ -14,6 +16,8 @@ module.exports = {
             const response = await DisfuncoesGastro.findAll()
             return res.json(response)
         } catch (error) {
+            console.log(error)
+            res.json({error: error.message})
             return error
         }
     },

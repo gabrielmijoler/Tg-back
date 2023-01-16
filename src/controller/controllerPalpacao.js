@@ -8,6 +8,8 @@ module.exports = {
             console.log(response)   
             return res.json(response)
         } catch (error) {
+            console.log(error)
+            res.json({error: error.message})
             return error
         }
     },
@@ -16,6 +18,8 @@ module.exports = {
             const response = await Palpacao.findAll()
             return res.json(response)
         } catch (error) {
+            console.log(error)
+            res.json({error: error.message})
             return error
         }
     },

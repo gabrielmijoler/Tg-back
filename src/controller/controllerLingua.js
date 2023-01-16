@@ -6,6 +6,8 @@ module.exports = {
             const response = await Lingua.create(req.body)
             return res.json(response)
         } catch (error) {
+            console.log(error)
+            res.json({error: error.message})
             return error
         }
     },
@@ -14,6 +16,8 @@ module.exports = {
             const response = await Lingua.findByPk(req.params.id)
             return res.json(response)
         } catch (error) {
+            console.log(error)
+            res.json({error: error.message})
             return error
         }
     },
@@ -22,6 +26,8 @@ module.exports = {
             const response = await Lingua.findAll()
             return res.json(response)
         } catch (error) {
+            console.log(error)
+            res.json({error: error.message})
             return error
         }
     },
@@ -39,6 +45,7 @@ module.exports = {
             });
         } catch (error) {
             console.log(error)
+            res.json({error: error.message})
             return error
         }
     }

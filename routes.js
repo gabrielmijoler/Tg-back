@@ -37,6 +37,7 @@ routes.get("/cid", CidController.get);
 
 routes.post("/formulario", FormularioController.post);
 routes.get("/formulario/:id", FormularioController.getByID);
+routes.get("/formulario", FormularioController.get);
 routes.put("/formulario/:id", FormularioController.put);
 
 routes.post("/cliente", UserController.post);

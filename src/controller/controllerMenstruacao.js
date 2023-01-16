@@ -6,6 +6,8 @@ module.exports = {
             const response = await Menstruacao.create(req.body)
             return res.json(response)
         } catch (error) {
+            console.log(error)
+            res.json({error: error.message})
             return error
         }
     },
@@ -14,6 +16,8 @@ module.exports = {
             const response = await Menstruacao.findAll()
             return res.json(response)
         } catch (error) {
+            console.log(error)
+            res.json({error: error.message})
             return error
         }
     },
