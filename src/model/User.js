@@ -114,15 +114,39 @@ const User = sequilize.define('cliente', {
     idFormulario: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: {         // User belongsTo Company 1:1
+        references: {
             model: 'formularios',
             key: 'id'
         }
     },
 })
 User.associate = function (models) {
-    User.belongsTo(Formulario, { foreignKey: 'idFormulario', as: 'formularios' })
+    User.belongsTo(Formulario, { foreignKey: 'idFormulario', scope:'nome'
+      , as: 'formularios' })
 };
+
+// User.findAll({ attributes: attributes, raw: true }).then(parent => {console.table(parent)})
+// User.findAll({
+//     include: [{
+//       model: Formulario,
+//       as: 'formularios',
+//       where: { id: '1' } //
+//     }]
+//   })
+//   .then(albums => console.log(albums))
+//   .catch(console.error)
+// const test = User.findAll((req) => {
+//     where: {
+//         userId: req.userId,
+//     },
+//     include: [
+//         {
+//             model: Formulario,
+//         },
+//     ],
+// })
+// console.log(test)
+
 // User.sync()
 
 module.exports = User

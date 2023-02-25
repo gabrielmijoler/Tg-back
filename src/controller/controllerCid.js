@@ -5,7 +5,7 @@ module.exports = {
     async get(req, res){
         try {
             const response = await Cid.findAll()
-            console.log(response);
+            // console.log(response);
             return res.json(response);
         } catch (error) {
             console.log(error)

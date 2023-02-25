@@ -15,6 +15,7 @@ app.use(routes)
 app.use((req, res) => {
     res.status(404)
 })
+
 // Inicia o sevidor
 app.listen(PORT, () => {
     console.log(`Servidor rodando com sucesso ${HOSTNAME}:${PORT}`)

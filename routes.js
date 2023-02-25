@@ -1,4 +1,5 @@
 var express = require("express");
+
 var CidController = require("./src/controller/controllerCid");
 var FormularioController = require("./src/controller/controllerFormulario");
 var UserController = require("./src/controller/controllerUser");
@@ -31,6 +32,7 @@ var TatoController = require("./src/controller/controllerTato")
 var ToraxController = require("./src/controller/controllerTorax")
 var TranspiracaoController = require("./src/controller/controllerTranspiracao")
 var DoresMuscularesController = require("./src/controller/controllerDoresMusculares")
+
 var routes = express.Router();
 
 routes.get("/cid", CidController.get);

@@ -2,6 +2,7 @@ const Sequelize = require('sequelize')
 const db = require("../config/database");
 const Cid = require('./Cid');
 const Palpacao = require('./Palpacao');
+const User = require('./User');
 
 const Formulario = db.define ('formulario',{
     id:{
@@ -614,7 +615,7 @@ const Formulario = db.define ('formulario',{
         allowNull: true,
         references: {         // User belongsTo Company 1:1
           model: 'palpacaos',
-          key: 'id'
+          key: 'id',    
         }
       },
       geralformpostura: {
@@ -629,13 +630,18 @@ const Formulario = db.define ('formulario',{
         }
     },
 })
-    Formulario.associate = function(models) {
+
+    Formulario.associate = function() {
         Formulario.belongsTo(Cid, {foreignKey: 'idCid', as: 'cids'})
     };
-    Formulario.associate = function(models) {
+    Formulario.associate = function() {
         Formulario.belongsTo(Palpacao, {foreignKey: 'idPalpacao', as: 'palpacaos'})
     };
-    
+
+
+// User.findAll({attributes: fn, raw: true,})
+//     .then(parent => {console.log(parent)})
+
 // Formulario.sync();
 
 module.exports = Formulario
