@@ -198,6 +198,11 @@ module.exports = {
     async get(req, res){
         try {
             const response = await Formulario.findAll()
+            Formulario.findAll({
+                where:{
+                    idCliente: id
+                }
+            })
             return res.json(response)
         } catch (error) {
             console.log(error)

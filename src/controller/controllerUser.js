@@ -1,11 +1,11 @@
+const Cliente = require("../model/Cliente");
 
-const User = require("../model/User");
 
 module.exports = {
     async post(req, res){
         try {
             console.log(req.body)
-            const response = await User.create(req.body)
+            const response = await Cliente.create(req.body)
             return res.json(response);
         } catch (error) {
             console.log(error)
@@ -16,7 +16,7 @@ module.exports = {
     },
     async getByID(req, res){
         try {
-            const response = await User.findByPk(req.params.id)
+            const response = await Cliente.findByPk(req.params.id)
             console.log(response)
             console.log(req.params.id)
             return res.json(response)
@@ -28,7 +28,7 @@ module.exports = {
     },
     async get(req, res){
         try {
-            const response = await User.findAll()
+            const response = await Cliente.findAll()
             return res.json(response)
         } catch (error) {
             console.log(error)
@@ -38,7 +38,7 @@ module.exports = {
     },
     async put(req, res){
         try {
-        const response = await User.findByPk(req.params.id)
+        const response = await Cliente.findByPk(req.params.id)
         const newCliente = {
             nome: req.body.nome,
             sexo: req.body.sexo,
@@ -51,7 +51,7 @@ module.exports = {
             datanascimento: req.body.datanascimento,
             updatedAt: req.body.updatedAt
         }
-        User[response] = newCliente;
+        Cliente[response] = newCliente;
         console.log(response)
         console.log(req.params.id)
         return res.json({
@@ -65,7 +65,7 @@ module.exports = {
     },
     async delete(req, res){
         try {
-            const response = await User.destroy({
+            const response = await Cliente.destroy({
                 where: {
                     id: req.params.id
                 },

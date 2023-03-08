@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 const db = require("../config/database");
 const Cid = require('./Cid');
 const Palpacao = require('./Palpacao');
-const User = require('./User');
+const Cliente = require('./Cliente');
 
 const Formulario = db.define ('formulario',{
     id:{
@@ -629,6 +629,14 @@ const Formulario = db.define ('formulario',{
             }
         }
     },
+    idCliente: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'clientes',
+            key: 'id'
+        }
+    },
 })
 
     Formulario.associate = function() {
@@ -637,7 +645,9 @@ const Formulario = db.define ('formulario',{
     Formulario.associate = function() {
         Formulario.belongsTo(Palpacao, {foreignKey: 'idPalpacao', as: 'palpacaos'})
     };
-
+    Formulario.associate = function() {
+        Formulario.belongsTo(Cliente, {foreignKey: 'idCliente', as: 'clientes'})
+    };
 
 // User.findAll({attributes: fn, raw: true,})
 //     .then(parent => {console.log(parent)})

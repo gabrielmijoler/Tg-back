@@ -1,10 +1,10 @@
 const Sequelize = require('sequelize')
 const sequilize = require("../config/database")
-const Formulario = require("./Formulario")
+
 
 const phoneValidationRegex = /\d{3}-\d{3}-\d{4}/;
 
-const User = sequilize.define('cliente', {
+const Cliente = sequilize.define('cliente', {
     id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -111,20 +111,7 @@ const User = sequilize.define('cliente', {
         type: Sequelize.DATE,
         allowNull: false
     },
-    idFormulario: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'formularios',
-            key: 'id'
-        }
-    },
 })
-User.associate = function (models) {
-    User.belongsTo(Formulario, { foreignKey: 'idFormulario', scope:'nome'
-      , as: 'formularios' })
-};
-
 // User.findAll({ attributes: attributes, raw: true }).then(parent => {console.table(parent)})
 // User.findAll({
 //     include: [{
@@ -147,6 +134,6 @@ User.associate = function (models) {
 // })
 // console.log(test)
 
-// User.sync()
+// Cliente.sync()
 
-module.exports = User
+module.exports = Cliente
