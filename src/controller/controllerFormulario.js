@@ -195,10 +195,9 @@ module.exports = {
             return error
         }
     },
-    async get(req, res){
+    async indexByCliente(req, res){
         try {
-            const response = await Formulario.findAll()
-            Formulario.findAll({
+            const response = Formulario.findAll({
                 where:{
                     idCliente: id
                 }
