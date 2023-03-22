@@ -95,7 +95,7 @@ const Cliente = sequilize.define('cliente', {
         },
     },
     datanascimento: {
-        type: Sequelize.DATE,
+        type: Sequelize.STRING,
         allowNull: false,
         validate: {
             notEmpty: {

@@ -197,16 +197,12 @@ module.exports = {
     },
     async indexByCliente(req, res){
         try {
-            const response = Formulario.findAll({
-                where:{
-                    idCliente: id
-                }
-            })
-            return res.json(response)
+            const response = await Formulario.findAll();
+            return res.json(response);
         } catch (error) {
-            console.log(error)
-            res.json({error: error.message})
-            return error
+            console.log(error);
+            res.status(400).json({error: error.message});
+            return error;
         }
     },
     async getByID(req, res){
