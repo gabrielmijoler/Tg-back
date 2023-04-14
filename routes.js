@@ -2,7 +2,7 @@ var express = require("express");
 
 var CidController = require("./src/controller/controllerCid");
 var FormularioController = require("./src/controller/controllerFormulario");
-var UserController = require("./src/controller/controllerUser");
+var UserController = require("./src/controller/controllerCliente");
 var LinguaController = require("./src/controller/controllerLingua")
 var GeralController = require("./src/controller/controllerGeral")
 var AbdomeController = require("./src/controller/controllerAbdome")
@@ -35,6 +35,8 @@ var DoresMuscularesController = require("./src/controller/controllerDoresMuscula
 
 var routes = express.Router();
 
+    
+
 routes.get("/cid", CidController.get);
 
 routes.post("/formulario", FormularioController.post);
@@ -45,6 +47,8 @@ routes.put("/formulario/:id", FormularioController.put);
 routes.post("/cliente", UserController.post);
 routes.get("/cliente/:id", UserController.getByID);
 routes.get("/cliente", UserController.get);
+routes.get("/cliente/:cpf", UserController.getByCpf);
+routes.post('/cliente/formulario', UserController.criarClienteEFormulario);
 
 routes.post("/lingua",LinguaController.post);
 routes.get("/lingua/:id",LinguaController.getByID);
