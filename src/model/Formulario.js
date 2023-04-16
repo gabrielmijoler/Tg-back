@@ -629,9 +629,9 @@ const Formulario = db.define ('formulario',{
             }
         }
     },
-    idCliente: {
+    idClient: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references: {
             model: 'clientes',
             key: 'id'
@@ -646,12 +646,13 @@ const Formulario = db.define ('formulario',{
         Formulario.belongsTo(Palpacao, {foreignKey: 'idPalpacao', as: 'palpacaos'})
     };
     Formulario.associate = function() {
-        Formulario.belongsTo(Cliente, {foreignKey: 'idCliente', as: 'clientes'})
+        Formulario.belongsTo(Cliente, {foreignKey: 'idClient', as: 'clientes'})
     };
 
 // User.findAll({attributes: fn, raw: true,})
 //     .then(parent => {console.log(parent)})
 
-// Formulario.sync();
+
+Formulario.sync();
 
 module.exports = Formulario

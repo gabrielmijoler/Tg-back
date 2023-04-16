@@ -48,7 +48,6 @@ routes.post("/cliente", UserController.post);
 routes.get("/cliente/:id", UserController.getByID);
 routes.get("/cliente", UserController.get);
 routes.get("/cliente/:cpf", UserController.getByCpf);
-routes.post('/cliente/formulario', UserController.criarClienteEFormulario);
 
 routes.post("/lingua",LinguaController.post);
 routes.get("/lingua/:id",LinguaController.getByID);

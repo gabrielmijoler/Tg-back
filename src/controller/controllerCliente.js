@@ -2,34 +2,6 @@ const Cliente = require("../model/Cliente");
 
 
 module.exports = {
-    async criarClienteEFormulario(req, res) {
-        try {
-            // Verifica se o cliente já existe pelo email, cpf ou qualquer outra propriedade única
-            const clienteExistente = await Cliente.findOne({
-                where: {
-                    email: req.body.email // Substitua pelo campo único que você deseja verificar
-                }
-            });
-
-            if (clienteExistente) {
-                return res.status(400).json({ error: 'Cliente já existe' });
-            }
-
-            // Cria o cliente
-            const novoCliente = await Cliente.create(req.body);
-
-            // Cria o formulário associado ao cliente recém-criado
-            await Formulario.create({
-                clienteId: novoCliente.id, // Associa o ID do novo cliente ao formulário
-                // Outras propriedades do formulário, se necessário
-            });
-
-            return res.json(novoCliente);
-        } catch (error) {
-            console.log(error);
-            return res.status(500).json({ error: 'Erro ao criar cliente e formulário' });
-        }
-    },
     async post(req, res){
         try {
             console.log(req.body)

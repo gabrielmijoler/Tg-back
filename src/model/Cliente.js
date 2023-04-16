@@ -133,7 +133,6 @@ const Cliente = sequilize.define('cliente', {
 //     ],
 // })
 // console.log(test)
-
-// Cliente.sync()
+Cliente.sync()
 
 module.exports = Cliente
