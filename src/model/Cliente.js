@@ -112,27 +112,7 @@ const Cliente = sequilize.define('cliente', {
         allowNull: false
     },
 })
-// User.findAll({ attributes: attributes, raw: true }).then(parent => {console.table(parent)})
-// User.findAll({
-//     include: [{
-//       model: Formulario,
-//       as: 'formularios',
-//       where: { id: '1' } //
-//     }]
-//   })
-//   .then(albums => console.log(albums))
-//   .catch(console.error)
-// const test = User.findAll((req) => {
-//     where: {
-//         userId: req.userId,
-//     },
-//     include: [
-//         {
-//             model: Formulario,
-//         },
-//     ],
-// })
-// console.log(test)
+
 Cliente.sync()
 
 module.exports = Cliente

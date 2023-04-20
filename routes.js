@@ -43,11 +43,13 @@ routes.post("/formulario", FormularioController.post);
 routes.get("/formulario/:id", FormularioController.getByID);
 routes.get("/formulario", FormularioController.indexByCliente);
 routes.put("/formulario/:id", FormularioController.put);
+routes.delete("/formulario/:id", FormularioController.delete);
 
 routes.post("/cliente", UserController.post);
 routes.get("/cliente/:id", UserController.getByID);
 routes.get("/cliente", UserController.get);
 routes.get("/cliente/:cpf", UserController.getByCpf);
+routes.delete("/cliente/:id", UserController.delete);
 
 routes.post("/lingua",LinguaController.post);
 routes.get("/lingua/:id",LinguaController.getByID);

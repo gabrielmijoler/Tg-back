@@ -79,22 +79,41 @@ module.exports = {
             return error
         }
     },
-    async delete(req, res){
+    async delete(req, res) {
         try {
-            const response = await Cliente.destroy({
-                where: {
-                    id: req.params.id
-                },
-            })
-            console.log(response)
-            return res.json({
-                error: false,
-                message: "Usuário deletado com sucesso!"
-            });
+          const user = await Cliente.findOne({ where: { id: req.params.id } });
+          if (!user) {
+            console.log("404")
+            return res.status(404).json({ error: true, message: 'Usuário não encontrado' });
+          }
+          await Cliente.destroy({
+            where: {
+              id: req.params.id,
+            },
+          });
+
+          return res.status(200).json({
+            error: false,
+            message: 'Usuário deletado com sucesso!',
+          });
         } catch (error) {
-            console.log(error)
-            res.json({error: error.message})
-            return error
-        }
-    }
+            console.error(error);
+            let status = 500;
+            let message = 'Erro interno do servidor';
+            if (error.name === 'SequelizeDatabaseError') {
+              status = 400;
+              message = 'Erro ao encontrar usuário';
+            } else if (error.name === 'SequelizeForeignKeyConstraintError') {
+              status = 400;
+              message = 'Erro ao excluir usuário: existem registros relacionados';
+            } else if (error.name === 'SequelizeUniqueConstraintError') {
+              status = 400;
+              message = 'Erro ao excluir usuário: violação de restrição de chave única';
+            } else if (error.name === 'SequelizeValidationError') {
+              status = 400;
+              message = 'Erro ao excluir usuário: dados inválidos fornecidos';
+            }
+            return res.status(status).json({ error: true, message });
+          }
+      }
 }
