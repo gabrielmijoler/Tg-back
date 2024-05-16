@@ -12,12 +12,16 @@ app.use(express.json())
 app.use(routes)
 
 
-app.use((req, res) => {
-    res.status(404)
-})
+app.use((res) => {
+    res.status(404).json({ error: "Endpoint não encontrado" });
+});
 
-// Inicia o sevidor
+app.use((err, res) => {
+    console.error(err.stack);
+    res.status(500).json({ error: "Ocorreu um erro interno" });
+});
+
+// Inicia o servidor
 app.listen(PORT, () => {
-    console.log(`Servidor rodando com sucesso ${HOSTNAME}:${PORT}`)
-    })
-
+    console.log(`Servidor rodando com sucesso em ${HOSTNAME}:${PORT}`);
+});

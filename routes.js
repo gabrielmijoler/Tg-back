@@ -39,7 +39,14 @@ var routes = express.Router();
 
 routes.get("/cid", CidController.get);
 
-routes.post("/formulario", FormularioController.post);
+routes.post('/formulario', async (req, res) => {
+    try {
+        const response = await FormularioController.post(req, res);
+        res.json(response);
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
 routes.get("/formulario/:id", FormularioController.getByID);
 routes.get("/formulario", FormularioController.indexByCliente);
 routes.put("/formulario/:id", FormularioController.put);

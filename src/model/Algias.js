@@ -2,87 +2,89 @@ const Sequelize = require('sequelize')
 const sequilize = require("../config/database");
  
 
-const Torax = sequilize.define ('torax',{
-    torax: {
+const Algias = sequilize.define ('algias',{
+    coluna: {
         type: Sequelize.STRING,
         validate:{
             customValidator(value){
                 if(value == null){
-                    throw new Error("Tórax null")
+                    throw new Error("Coluna null")
                 }
             },
             notEmpty: {
-                msg: 'Por favor, informe o valor para o campo torax'
+                msg: 'Por favor, informe o valor para o campo coluna'
             }
         }
     },
-    obs_torax: {
+    obs_coluna: {
         type: Sequelize.STRING,
         validate:{
             customValidator(value){
                 if(value == null){
-                    throw new Error("Obs_torax null")
+                    throw new Error("Obs_abdome null")
                 }
             },
             notEmpty: {
-                msg: 'Por favor, informe o valor para o campo torax observação'
+                msg: 'Por favor, informe o valor para o campo abdome observação'
             }
         }
     },
-    dores_cabeca: {
+    dores_musculares: {
         type: Sequelize.STRING,
         validate:{
             customValidator(value){
                 if(value == null){
-                    throw new Error("Dores de cabeça null")
+                    throw new Error("Dores musculares null")
                 }
             },
             notEmpty: {
-                msg: 'Por favor, informe o valor para o campo dor de cabeça'
+                msg: 'Por favor, informe o valor para o campo dores musculares'
             }
         }
     },
-    escala_analogdor: {
+    dores_articulares: {
         type: Sequelize.STRING,
         validate:{
             customValidator(value){
                 if(value == null){
-                    throw new Error("Escala de dor null")
+                    throw new Error("Dores Articulares null")
                 }
             },
             notEmpty: {
-                msg: 'Por favor, informe o valor para o campo escala analogica de dor'
+                msg: 'Por favor, informe o valor para o campo dores articulares'
             }
         }
     },
-    diagnostico_clinico: { 
+    abdome: {
         type: Sequelize.STRING,
         validate:{
             customValidator(value){
                 if(value == null){
-                    throw new Error("Diagnóstico clínico null")
+                    throw new Error("Abdome null")
                 }
             },
             notEmpty: {
-                msg: 'Por favor, informe o valor para o campo diagnostico clinico'
+                msg: 'Por favor, informe o valor para o campo abdome'
             }
         }
     },
-    queixa_prin: { 
+    obs_abdome: {
         type: Sequelize.STRING,
         validate:{
             customValidator(value){
                 if(value == null){
-                    throw new Error("Neuromuscular null")
+                    throw new Error("Obs_abdome null")
                 }
             },
             notEmpty: {
-                msg: 'Por favor, informe o valor para o campo queixa principal'
+                msg: 'Por favor, informe o valor para o campo abdome observação'
             }
         }
     },
+    
 })
 
-// Torax.sync();
+// Algias.sync();
 
-module.exports = Torax;
+
+module.exports = Algias;

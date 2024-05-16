@@ -1,4 +1,4 @@
-const Geral = require("../model/Geral");
+const Geral = require("../model/ItensGeral");
 
 module.exports = {
     async post(req, res){

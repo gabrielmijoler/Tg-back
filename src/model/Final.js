@@ -2,73 +2,74 @@ const Sequelize = require('sequelize')
 const sequilize = require("../config/database");
  
 
-const Torax = sequilize.define ('torax',{
-    torax: {
+const Final = sequilize.define ('final',{
+    diagnostico_teurapeutico: {
         type: Sequelize.STRING,
         validate:{
             customValidator(value){
                 if(value == null){
-                    throw new Error("Tórax null")
+                    throw new Error("DIAGNÓSTICO TERAPÊUTICO null")
                 }
             },
             notEmpty: {
-                msg: 'Por favor, informe o valor para o campo torax'
+                msg: 'Por favor, informe o valor para o campo diagnostico teurapeutico'
             }
         }
     },
-    obs_torax: {
+    condutas: {
         type: Sequelize.STRING,
         validate:{
             customValidator(value){
                 if(value == null){
-                    throw new Error("Obs_torax null")
+                    throw new Error("Condutas null")
                 }
             },
             notEmpty: {
-                msg: 'Por favor, informe o valor para o campo torax observação'
+                msg: 'Por favor, informe o valor para o campo condutas'
             }
         }
     },
-    dores_cabeca: {
+    
+    objetivo: { 
         type: Sequelize.STRING,
         validate:{
             customValidator(value){
                 if(value == null){
-                    throw new Error("Dores de cabeça null")
+                    throw new Error("Objetivo final null")
                 }
             },
             notEmpty: {
-                msg: 'Por favor, informe o valor para o campo dor de cabeça'
+                msg: 'Por favor, informe o valor para o campo objetivo'
             }
         }
     },
-    escala_analogdor: {
+    medicamento: { 
         type: Sequelize.STRING,
         validate:{
             customValidator(value){
                 if(value == null){
-                    throw new Error("Escala de dor null")
+                    throw new Error("Medicamento null")
                 }
             },
             notEmpty: {
-                msg: 'Por favor, informe o valor para o campo escala analogica de dor'
+                msg: 'Por favor, informe o valor para o campo medicamento'
             }
         }
     },
-    diagnostico_clinico: { 
+    patalogia: { 
         type: Sequelize.STRING,
         validate:{
             customValidator(value){
                 if(value == null){
-                    throw new Error("Diagnóstico clínico null")
+                    throw new Error("Patalogia null")
                 }
             },
             notEmpty: {
-                msg: 'Por favor, informe o valor para o campo diagnostico clinico'
+                msg: 'Por favor, informe o valor para o campo patalogia'
             }
         }
     },
-    queixa_prin: { 
+    neuromuscular: { 
         type: Sequelize.STRING,
         validate:{
             customValidator(value){
@@ -77,12 +78,12 @@ const Torax = sequilize.define ('torax',{
                 }
             },
             notEmpty: {
-                msg: 'Por favor, informe o valor para o campo queixa principal'
+                msg: 'Por favor, informe o valor para o campo neuromuscular'
             }
         }
     },
 })
 
-// Torax.sync();
+Final.sync();
 
-module.exports = Torax;
+module.exports = Final;

@@ -1,13 +1,20 @@
 const Formulario = require("../model/Formulario");
 
-
 module.exports = {
-    async post(req, res){
+    async post(req, res) {
         try {
-            console.log(req.body)
-            const response = await Formulario.create(req.body)
-            console.log(response)
-            return res.json(response)
+            console.log(req.body);
+            const dataToSave = {
+                ...req.body,
+                createdAt: new Date(),
+                updatedAt: new Date()
+            };
+
+            // Salvar no banco de dados
+            const response = await Formulario.create(dataToSave);
+            console.log(response);
+
+            return res.json(response);
         } catch (error) {
             console.log(error)
             res.json({error: error.message})
@@ -84,7 +91,7 @@ module.exports = {
                 obs_fala: req.body.obs_fala,
                 Obs_emocoes: req.body.Obs_emocoes,
                 idCid: req.body.idCid,
-                geralformpostura: req.body.geralformpostura,
+                ItensGeralformpostura: req.body.ItensGeralformpostura,
                 createdAt: req.body.createdAt,
                 updatedAt: req.body.updatedAt
         }
